@@ -1,0 +1,297 @@
+/* === Variáveis de estilo === */
+:root {
+  --font-titulo: 'Comic Neue', cursive;
+  --font-texto: 'Nunito', sans-serif;
+
+  --cor-fundo: #FAFAFA;
+  --cor-texto: #222222;
+  --cor-secundaria: #555555;
+
+  --cor-acento-1: #FFB7A5;
+  --cor-acento-2: #A8E6CF;
+  --cor-acento-3: #FFF2A8;
+  --cor-link: #4A90E2;
+  --cor-link-hover: #3A78C2;
+}
+
+body {
+  font-family: var(--font-texto);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  margin: 0px;
+}
+
+/* Oculta header/footer do tema */
+.a3-site-header,
+.a3-site-footer {
+  display: none;
+}
+
+/* Container principal */
+.a3-jogo-grid-master {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header do jogo */
+.a3-jogo-header {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--cor-acento-3);
+  border-bottom: 2px solid #e6d66a;
+  border-radius: 12px;
+}
+
+.a3-jogo-header h1 {
+  font-family: var(--font-titulo);
+  font-size: 2.5rem;
+  color: var(--cor-texto);
+  margin-bottom: 0.5rem;
+}
+
+.a3-jogo-header p {
+  font-size: 1.1rem;
+  color: var(--cor-secundaria);
+  margin-bottom: 0.4rem;
+}
+
+/* Main content */
+.a3-jogo-jogo {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.a3-jogo-main {
+  background-color: var(--cor-acento-2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.a3-jogo-crianca-cont {
+	  display: grid; 
+      gap: 1rem;
+}
+
+.crianca-img {
+  background-color: #fffaf0;
+  border: 2px dashed #E0B0FF;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+}
+
+.crianca-info {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.a3-jogo-legenda {
+  background-color: #fffaf0;
+  border: 2px dashed #ffb6c1;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 2rem;
+}
+
+.colinha-legenda {
+  list-style: none;
+  padding-left: 0;
+}
+
+.colinha-legenda li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Labels e campos */
+.a3-jogo-jogo label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: var(--cor-texto);
+  font-family: var(--font-texto);
+}
+
+.a3-jogo-jogo input[type="text"],
+.a3-jogo-jogo select {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--cor-acento-1);
+  background-color: #fff;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+/* Rodapé do jogo */
+.a3-jogo-footer {
+  width: 100%;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: var(--cor-acento-3);
+  border-top: 2px solid #e6d66a;
+  border-radius: 12px;
+}
+
+.a3-jogo-footer p {
+  font-size: 1rem;
+  color: var(--cor-secundaria);
+  margin-bottom: 0.3rem;
+}
+
+/* SVG */
+.a3-crianca-svg {
+  width: 100%;
+  height: auto;
+}
+
+.cor-cabelo {
+  stroke: #3B2A1A;
+  stroke-width: 3px;
+}
+
+.pele-cor {
+  stroke: #3B2A1A;
+  stroke-width: 3px;
+}
+
+.cor-roupa-1,
+.roupa-det,
+.cor-roupa-2 {
+  stroke: #3B2A1A;
+  stroke-width: 4px;
+}
+
+.cor-olho {
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.traco-rosto {
+  stroke: #3B2A1A;
+  stroke-width: 7px;
+	fill: none;
+}
+
+.iris-fill {
+    stroke: #3B2A1A;	
+	fill: black;
+}
+
+.boca-aberta {
+	fill: #e3916e;
+}
+
+.fase-situacao {
+  background-color: #fff0f6;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.botao-fase {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--cor-acento-1);
+  color: var(--cor-texto);
+  font-weight: 600;
+  font-family: var(--font-texto);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 0.5rem
+}
+
+.botao-fase:last-child {
+  margin-bottom: 0; /* Para o último botão não ficar com espaço extra */
+}
+
+.botao-fase:hover {
+  background-color: #e29a89;
+}
+
+.feedback-fase {
+  background-color: #eaf4f4;
+  border-left: 5px solid #70c1b3;
+  padding: 1rem;
+  border-radius: 8px;
+  font-style: italic;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.mostrar-legenda-btn {
+  display: none; /* Só aparece no mobile */
+}
+
+@media (max-width: 768px) {
+  .a3-jogo-jogo {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .a3-jogo-main {
+    padding: 1rem;
+  }
+
+  .a3-jogo-header, .a3-jogo-footer {
+    padding: 0.75rem;
+  }
+
+  .a3-jogo-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .a3-jogo-header p {
+    font-size: 1rem;
+  }
+
+  .a3-jogo-footer p {
+    font-size: 0.9rem;
+  }
+
+  .botao-fase {
+    width: 100%;
+  }
+
+  /* Esconder legenda inicialmente */
+  .a3-jogo-legenda {
+    display: none;
+  }
+
+  /* Mostrar botão para abrir legenda */
+  .mostrar-legenda-btn {
+    display: block;
+    background-color: var(--cor-acento-3);
+    border: 2px dashed var(--cor-acento-1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--cor-texto);
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+}
