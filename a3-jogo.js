@@ -85,7 +85,6 @@ function iniciarMontagemPersonagem() {
   const peleSelect = document.getElementById('select-pele');
   const cabeloTipo = document.getElementById('select-cabelo-tipo');
   const cabeloCor = document.getElementById('select-cabelo-cor');
-  const olhoCor = document.getElementById('select-cor-olho');
   const blusaCor = document.getElementById('select-cor-blusa');
   const calcaCor = document.getElementById('select-cor-calca');
 
@@ -97,7 +96,7 @@ function iniciarMontagemPersonagem() {
     el.setAttribute('fill', cabeloCor.value);
   });
   document.querySelectorAll('.cor-olho').forEach(el => {
-    el.setAttribute('fill', olhoCor.value);
+    el.setAttribute('fill', "white");
   });
   document.querySelectorAll('.cor-roupa-1').forEach(el => {
     el.setAttribute('fill', blusaCor.value);
@@ -111,12 +110,6 @@ function iniciarMontagemPersonagem() {
     const cor = getCorPele(peleSelect.value);
     document.querySelectorAll('.pele-cor').forEach(el => {
       el.setAttribute('fill', cor);
-    });
-  });
-
-  olhoCor.addEventListener('change', () => {
-    document.querySelectorAll('.cor-olho').forEach(el => {
-      el.setAttribute('fill', olhoCor.value);
     });
   });
 
@@ -213,7 +206,6 @@ function iniciarJogo() {
   const pele = document.getElementById("select-pele").value;
   const cabeloTipo = document.getElementById("select-cabelo-tipo").value;
   const cabeloCor = document.getElementById("select-cabelo-cor").value;
-  const olhoCor = document.getElementById("select-cor-olho").value;
   const blusaCor = document.getElementById("select-cor-blusa").value;
   const calcaCor = document.getElementById("select-cor-calca").value;
 
@@ -224,7 +216,7 @@ function iniciarJogo() {
 
   definirPerfil();
 
-  gameState.crianca = { nome, pele, cabeloTipo, cabeloCor, olhoCor, blusaCor, calcaCor };
+  gameState.crianca = { nome, pele, cabeloTipo, cabeloCor, blusaCor, calcaCor };
   gameState.metricas = { aprendizado: 0, vinculo: 0, estresse: 0, autonomia: 0 };
   gameState.faseAtual = 0;
 

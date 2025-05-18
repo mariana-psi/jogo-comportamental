@@ -35,17 +35,6 @@
   </select>
 </label>
 
-<label>Cor dos olhos:
-  <select id="select-cor-olho">
-    <option value="#ccc">--Escolha--</option>
-    <option value="#9db363">Verde </option>
-    <option value="#4b8eb1">Azul</option>
-    <option value="#a0522d">Castanho</option>
-    <option value="black">Sem cor 1</option>
-    <option value="white">Sem cor 2</option>
-  </select>
-</label>
-
 <label>Cor da blusa:
   <select id="select-cor-blusa">
     <option value="#ccc">--Escolha--</option>
