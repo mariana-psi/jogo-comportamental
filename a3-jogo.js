@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const gameState = {
   crianca: {},
-  perfil: "", // "NT", "ND" ou "TA"
+  perfil: "", // "NT" ou "ND"
   faseAtual: 0,
   metricas: {
     aprendizado: 0,
@@ -154,33 +154,6 @@ function getCorPele(nome) {
   return cores[nome] || '#ccc';
 }
 
-function trocarExpressaoFacial() {
-  const expressoes = ['raiva', 'birra', 'medo', 'triste', 'feliz', 'nojo', 'neutro'];
-
-  expressoes.forEach(nome => {
-    const el = document.getElementById('rosto-' + nome);
-    if (el) el.style.display = 'none';
-  });
-
-  const { vinculo, estresse } = gameState.metricas;
-
-  let novaExpressao = 'neutro';
-  if (estresse >= 3 && vinculo <= -2) {
-    novaExpressao = 'raiva';
-  } else if (estresse >= 2 && vinculo <= -1) {
-    novaExpressao = 'medo';
-  } else if (estresse >= 2) {
-    novaExpressao = 'birra';
-  } else if (vinculo < 0 && estresse > 0) {
-    novaExpressao = 'triste';
-  } else if (vinculo > 1 && estresse <= 0) {
-    novaExpressao = 'feliz';
-  }
-
-  const elNova = document.getElementById('rosto-' + novaExpressao);
-  if (elNova) elNova.style.display = 'block';
-}
-
 function saveGameState() {
   localStorage.setItem("a3JogoState", JSON.stringify(gameState));
 }
@@ -261,7 +234,7 @@ function mostrarFase() {
   const nomeCrianca = gameState.crianca.nome || "A criança";
 
   // Aplica expressão inicial
-  if (fase.expressaoInicial) {
+  if (fase.expressaoInicial && !modoDebug) {
     trocarParaExpressao(fase.expressaoInicial);
   }
 
@@ -300,7 +273,7 @@ function processarResposta(alternativaIndex) {
   atualizarInfoCrianca();
 
   // Expressão personalizada no feedback
-  if (alternativa.expressaoFeedback) {
+  if (alternativa.expressaoFeedback && !modoDebug) {
     trocarParaExpressao(alternativa.expressaoFeedback);
   }
 
@@ -393,7 +366,10 @@ function finalizarJogo() {
   }
 
   // Mostra expressão facial final
+  if (!modoDebug) {
   trocarParaExpressao(finalEscolhido.expressao);
+}
+
 
   // Renderiza feedback final
   const resumoEl = document.createElement("div");
